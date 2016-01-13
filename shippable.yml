@@ -1,8 +1,10 @@
 language: java
+
 build_image: drydock/u12javpls:tip
 
 services: 
    - mysql
+   
 jdk:
    - oraclejdk7
    - openjdk6
@@ -12,6 +14,8 @@ jdk:
 after_success:
    - mvn clean cobertura:cobertura
    - mvn test
+   
 notifications:
-  email:
-   test_ci2@yahoo.in
+   email:
+      test_ci2@yahoo.in
+   irc: "chat.freenode.net#test-irc"
